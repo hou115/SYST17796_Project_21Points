@@ -10,8 +10,20 @@ package ca.sheridancollege.project;
  * @author Juntong
  */
 public class ExtendPlayer extends Player {
-    public ExtendPlayer(String s){
+    
+    private int credit;
+    
+    public ExtendPlayer(String s, int n){
         super(s);
+        this.credit = n;
+    }
+    
+    public int getCredit(){
+        return credit;
+    }
+    
+    public void setCredit(int credit){
+        this.credit = credit;
     }
     @Override
     public void play(){
