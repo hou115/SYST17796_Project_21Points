@@ -23,10 +23,8 @@ public class ExtendGame extends Game{
         Scanner input = new Scanner(System.in);
         System.out.println("Please Enter a name: ");
         String name = input.nextLine();
-        ExtendPlayer host = new ExtendPlayer("Host", 100);
         ExtendPlayer newPlayer = new ExtendPlayer(name, 100);
         ArrayList<Player> players = new ArrayList<Player>();
-        players.add(host);
         players.add(newPlayer);
         System.out.println("Welcome "+ newPlayer.getPlayerID()+". You have " + newPlayer.getCredit() + " credit.");
         newGame.play();
@@ -46,6 +44,8 @@ public class ExtendGame extends Game{
                 System.out.println("You have entered a invalid number. Please try again.");
             }
         }
+        GroupOfCards gp = new GroupOfCards(52);
+        
     }
     @Override
     public void declareWinner(){

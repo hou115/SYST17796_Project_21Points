@@ -7,6 +7,8 @@ package ca.sheridancollege.project;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import ca.sheridancollege.project.Card.Suit;
+import ca.sheridancollege.project.Card.Value;
 
 /**
  * A concrete class that represents any grouping of cards for a Game.
@@ -16,7 +18,7 @@ import java.util.Collections;
  */
 public class GroupOfCards 
 {
-   
+
     //The group of cards, stored in an ArrayList
     private ArrayList <Card> cards;
     private int size;//the size of the grouping
@@ -24,6 +26,12 @@ public class GroupOfCards
     public GroupOfCards(int givenSize)
     {
         size = givenSize;
+        Suit s1 = Suit.HEARTS;
+        for(Suit s : Suit.values()){
+            for(Value v : Value.values()){
+                cards.add(new ExtendCard(s, Value.ACE));
+            }
+        }
     }
     
     /**

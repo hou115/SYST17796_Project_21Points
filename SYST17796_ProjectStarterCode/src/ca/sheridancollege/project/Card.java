@@ -37,7 +37,7 @@ public abstract class Card
 	}
 
         public void printCard(){
-            System.out.println(this.value);
+            System.out.println(this.suit+" "+this.value);
         }
     @Override
     public abstract String toString();
