@@ -36,6 +36,7 @@ public class ExtendGame extends Game{
             while(!(s_AnotherPlay.compareToIgnoreCase("Y")==0||s_AnotherPlay.compareToIgnoreCase("N")==0||s_AnotherPlay.compareToIgnoreCase("YES")==0||s_AnotherPlay.compareToIgnoreCase("NO")==0));
         
         }while(anotherPlay);
+        System.out.println("Thanks for playing.\nDelevoped by Juntong Hou, Boqian Wen.");
         System.exit(0); 
     }
     public static ExtendGame reg(){
@@ -144,7 +145,7 @@ public class ExtendGame extends Game{
             ch2.cardClear();
             //check if user lost all the credit
             if(ex.getCredit()<=0){
-                System.out.println("You lost all your credit.\nGame Over!");
+                System.out.println("You lost all your credit.\nGame Over!\nThanks for playing.\nDelevoped by Juntong Hou, Boqian Wen.");
                 System.exit(0);
             }
     }
