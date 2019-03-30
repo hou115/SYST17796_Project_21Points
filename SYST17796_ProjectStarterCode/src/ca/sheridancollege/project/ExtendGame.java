@@ -44,7 +44,18 @@ public class ExtendGame extends Game{
         //set Players to newGame Object, Players is an ArrayList
         Scanner input = new Scanner(System.in);
         System.out.print("Please Enter a name: ");
-        String name = input.nextLine();
+        String name;
+        do{
+            name = input.nextLine();
+            //remove leading and trailing spaces, so if spaces only, name will be empty
+            name = name.trim();
+            if(name.compareTo("")==0){
+                System.out.println("Name cannot be empty. Please try again.");
+            }
+            if(name.length()>30){
+                System.out.println("Name cannot exceed 30 characters. Please try again.");
+            }
+        }while(name.compareTo("")==0||name.length()>30);
         ExtendPlayer newPlayer = new ExtendPlayer(name, 100);
         ArrayList<Player> players = new ArrayList<Player>();
         players.add(newPlayer);
@@ -132,7 +143,7 @@ public class ExtendGame extends Game{
             ch1.cardClear();
             ch2.cardClear();
             //check if user lost all the credit
-            if(ex.getCredit()>=0){
+            if(ex.getCredit()<=0){
                 System.out.println("You lost all your credit.\nGame Over!");
                 System.exit(0);
             }
