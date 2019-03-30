@@ -20,25 +20,26 @@ public class GroupOfCards
 {
 
     //The group of cards, stored in an ArrayList
-    private ArrayList <Card> cards;
+    private ArrayList <ExtendCard> cards;
     private int size;//the size of the grouping
     
     public GroupOfCards(int givenSize)
     {
         size = givenSize;
-        Suit s1 = Suit.HEARTS;
+        cards = new ArrayList<>();
         for(Suit s : Suit.values()){
             for(Value v : Value.values()){
-                cards.add(new ExtendCard(s, Value.ACE));
+                cards.add(new ExtendCard(s, v));
             }
         }
+        //if the group of card is not 52, (1)less than 52 (2) more than 52
     }
     
     /**
      * A method that will get the group of cards as an ArrayList
      * @return the group of cards.
      */
-    public ArrayList<Card> showCards()
+    public ArrayList<ExtendCard> showCards()
     {
         return cards;
     }
